@@ -29,20 +29,22 @@
     padding: 0 50px;
 }
 
-#navbar-logo{
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
+#logo{
+    padding-top: 10px;
+    max-width: 135px;
+    max-height: 70px;
 }
+
+@media screen and (min-width: 468px){
+    #logo{
+        padding-top: 17px;
+        padding-left: 20px;
+        width: 115px;
+        height: 60px;
+    }
+
+}
+
 
 .navbar-menu{
     display: flex;
@@ -193,7 +195,7 @@
     .hero{
         background: #000000;
         background: linear-gradient(to right, #161616, #000000);
-        padding: 70px 0;
+        padding: 90px 0;
     }
 
     .hero-container{
@@ -698,5 +700,6 @@
     .social-media-wrap{
         flex-direction: column;
     }
+    
 }
 
