@@ -5,54 +5,64 @@ const navLogo = document.querySelector('#navbar-logo');
 // Display Mobile Menu 
 const mobileMenu = () => {
     menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
+    menuLinks.classList.toggle('active');   
     
 };
 
 menu.addEventListener('click', mobileMenu);
+let links = document.querySelectorAll(".navbar-menu a");
+let bodyId = document.querySelector("body").id;
+
+for(let link of links){
+    if(link.dataset.active == bodyId){
+        link.classList.add('highlight');
+    }
+}
 
 //Show active menu when scrolling
-const highlightMenu = () => {
-    const elem = document.querySelector('.highlight');
-    const homeMenu = document.querySelector('#home-page');
-    const aboutMenu = document.querySelector('#about-page');
-    const serviceMenu = document.querySelector('#services-page');
-    const contactMenu = document.querySelector('#contact-page');
-    let scrollPos = window.scrollY;
+// const highlightMenu = () => {
+//     const elem = document.querySelector('.highlight');
+//     const homeMenu = document.querySelector('#home-page');
+//     const aboutMenu = document.querySelector('#about-page');
+//     const serviceMenu = document.querySelector('#services-page');
+//     const contactMenu = document.querySelector('#contact-page');
+//     let scrollPos = window.scrollY;
+
+ 
 
     //add 'highlight' class to my menu items
-    if(window.innerWidth > 960 && scrollPos < 800){
-        homeMenu.classList.add('highlight');
-        aboutMenu.classList.remove('highlight');
-        return
-    }else if(window.innerWidth > 960 & scrollPos < 1400){
-        aboutMenu.classList.add('highlight');
-        homeMenu.classList.remove('highlight');
-        serviceMenu.classList.remove('highlight');
-        contactMenu.classList.remove('highlight');
-        return
-    }else if(window.innerWidth > 960 && scrollPos < 2345) {
-        serviceMenu.classList.add('highlight');
-        homeMenu.classList.remove('highlight');
-        aboutMenu.classList.remove('highlight');
-        contactMenu.classList.remove('highlight');
-        return
-    }else if(window.innerWidth > 960 && scrollPos < 3500) {
-        aboutMenu.classList.remove('highlight');
-        homeMenu.classList.remove('highlight');
-        serviceMenu.classList.remove('highlight');
-        contactMenu.classList.add('highlight');
+//     if(window.innerWidth > 960 && scrollPos < 800){
+//         homeMenu.classList.add('highlight');
+//         aboutMenu.classList.remove('highlight');
+//         return
+//     }else if(window.innerWidth > 960 & scrollPos < 1400){
+//         aboutMenu.classList.add('highlight');
+//         homeMenu.classList.remove('highlight');
+//         serviceMenu.classList.remove('highlight');
+//         contactMenu.classList.remove('highlight');
+//         return
+//     }else if(window.innerWidth > 960 && scrollPos < 2345) {
+//         serviceMenu.classList.add('highlight');
+//         homeMenu.classList.remove('highlight');
+//         aboutMenu.classList.remove('highlight');
+//         contactMenu.classList.remove('highlight');
+//         return
+//     }else if(window.innerWidth > 960 && scrollPos < 3500) {
+//         aboutMenu.classList.remove('highlight');
+//         homeMenu.classList.remove('highlight');
+//         serviceMenu.classList.remove('highlight');
+//         contactMenu.classList.add('highlight');
 
-        return
-    }
+//         return
+//     }
 
-    if((elem && window.innerWidth < 960 && scrollPos <600) || elem){
-        elem.classList.remove('highlight');
-    }
-};
+//     if((elem && window.innerWidth < 960 && scrollPos <600) || elem){
+//         elem.classList.remove('highlight');
+//     }
+// };
 
-window.addEventListener('scroll',highlightMenu);
-window.addEventListener('click',highlightMenu);
+// window.addEventListener('scroll',highlightMenu);
+// window.addEventListener('click',highlightMenu);
 
 //close mobile Menu when clicking on a menu item
 const hideMobileMenu = () => {
